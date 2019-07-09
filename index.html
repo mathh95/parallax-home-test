@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Parallax Site Protótipo</title>
+
+	<link rel="stylesheet" href="styles/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<script src="js/slides.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function($) {
+			$('div.ps-dropdown').click(function(event) {
+				$(this).find('.ps-droplist').slideToggle();
+			});
+
+			$('div.ps-dropelement').click(function(event) {
+				event.preventDefault();
+				alert($(this).text())
+			});
+
+
+			mvar = false;
+			document.getElementById("menubar-symbol").addEventListener("click", function(){
+				document.getElementById("menubar").classList.remove("ps-todo");
+				if(mvar == true){
+					mvar = false;
+					document.getElementById("menubar").classList.remove("ps-display-flex");
+					document.getElementById("menubar").classList.add("ps-display-none");
+				}else{
+					mvar = true;
+					document.getElementById("menubar").classList.remove("ps-display-none");
+					document.getElementById("menubar").classList.add("ps-display-flex");
+				}
+			});
+
+        });
+        onscroll = function() {
+            var nVScroll;
+            nVScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+         
+            var elem = document.querySelector('.ps-gray');
+            var elem2 = document.querySelector('#menubar-symbol');
+         
+            if(nVScroll > 100){
+                document.querySelector('.ps-gray').classList.remove("ps-display-flex");
+                document.querySelector('.ps-gray').classList.add("ps-display-none");
+                elem2.style.top = "20px";
+            }else{
+                document.querySelector('.ps-gray').classList.remove("ps-display-none");
+                document.querySelector('.ps-gray').classList.add("ps-display-flex");
+                elem2.style.top = "70px";
+            }
+        };
+
+	</script>
+
+
+</head>
+<body> 
+
+	<nav class="ps-navbar-top" style="z-index: 9999;">
+		<div class="ps-flex ps-gray">
+			<div class="ps-header-box ps-funcionamento">
+				Funcionamos Todos os dias - 10:00 as 22:00
+			</div>
+			<div class="ps-header-box ps-icons">
+				<a href="https://www.instagram.com/?hl=pt-br"> <i class="fab fa-instagram"></i> </a>
+			<a href="https://twitter.com/"> <i class="fab fa-twitter"></i> </a>
+			<a href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i> </a>
+			<a href="https://www.youtube.com/"> <i class="fab fa-youtube"></i> </a>
+
+			</div>
+		</div>
+		<div class="ps-flex ps-black" id="flexible">
+			<div class="ps-header-box ps-left-column">
+				<div class="ps-banner-image"> <img src="images/logos/burguer-logo2.png" alt="Logo"> </div>
+				<div class="ps-icon"> <i class="fas fa-phone-volume"></i> </div>
+				<div class="ps-phone"> (45)3028 0000 </div>
+				<div>
+					<a href="javascript:void(0);" id="menubar-symbol" class="ps-icons ps-right-column"><i class="fas fa-bars"></i></a>
+				</div>
+			</div>
+			<div class="ps-header-box ps-right-column">
+				<div  id="menubar" class="links-wrapper ps-todo">
+					<div class="ps-margin"> Home </div>
+					<div class="ps-margin"> Sobre </div>
+					<div class="ps-margin ps-dropdown">
+						Menu
+						<div class="ps-droplist">
+							<div class="ps-dropelement"> Lanches </div>
+							<div class="ps-dropelement"> Bebidas </div>
+							<div class="ps-dropelement"> Adicionais </div>
+						</div>
+						<i class="fas fa-caret-down"></i>
+					</div>
+					<div class="ps-margin"> Contato </div>
+					<div class="ps-margin ps-dropdown">
+						Opções
+						<div class="ps-droplist">
+							<div class="ps-dropelement"> Entrega </div>
+							<div class="ps-dropelement"> Promoções </div>
+							<div class="ps-dropelement"> Feedback </div>
+						</div>
+						<i class="fas fa-caret-down"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<section class="ps-hero-section">
+		<div class="ps-heading">
+			<div class="ps-top-heading"> <h1>Lorem ipsum</h1> </div>
+			<div class="ps-bottom-heading"> <h3>Lorem ipsum</h3> </div>
+		</div>
+	</section>
+
+
+
+
+	<section class="ps-features-section">
+		<div class="ps-columns-wrapper">
+			<div class="ps-column">
+				<i class="fas fa-truck"></i>
+				<p>Nós Entregamos!</p>
+				<p class="ps-delete"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+			</div>
+			<div class="ps-column">
+				<i class="fas fa-wifi"></i>
+				<p>Faça seu pedido pela internet!</p>
+				<p class="ps-delete"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+			</div>
+			<div class="ps-column">
+				<i class="fas fa-chart-line"></i>
+				<p>Mais de 30 tipos de lanches!</p>
+				<p class="ps-delete"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+			</div>
+		</div>
+	</section>
+
+	<section class="quoteblock-title">
+		<div class="customers-avaliation">
+			<p class="customers-avaliation-text"><b>O que nossos clientes dizem: </b></p>
+		</div>
+		<div class="quoteblock-buttons">
+			<a href="#" class="previousButton round">&lt;</a>
+			<a href="#" class="nextButton round">&gt;</a>
+		</div>
+	</section>
+
+	<section class="quoteblock-section">
+		<div class="quote-box">
+			<blockquote>
+				<p class="ps-quotation-mark"> “ </p>
+				<p class="ps-quote-text"> Nunc id orci lorem. Etiam sit amet velit eget leo interdum porttitor non eu velit. Quisque vitae risus aliquet, iaculis elit sit amet, commodo nunc. </p>
+				<hr> <div class="blog-post-actions"> <p class="blog-post-bottom pull-left"> Abraham Lincoln </p> </div>
+			</blockquote>
+		</div>
+		<div class="quote-box">
+			<blockquote>
+				<p class="ps-quotation-mark"> “ </p>
+				<p class="ps-quote-text"> Nunc id orci lorem. Etiam sit amet velit eget leo interdum porttitor non eu velit. Quisque vitae risus aliquet, iaculis elit sit amet, commodo nunc. </p>
+				<hr> <div class="blog-post-actions"> <p class="blog-post-bottom pull-left"> Joseph Kennedy </p> </div>
+			</blockquote>
+		</div>
+		<div class="quote-box">
+			<blockquote>
+				<p class="ps-quotation-mark"> “ </p>
+				<p class="ps-quote-text"> Nunc id orci lorem. Etiam sit amet velit eget leo interdum porttitor non eu velit. Quisque vitae risus aliquet, iaculis elit sit amet, commodo nunc. </p>
+				<hr> <div class="blog-post-actions"> <p class="blog-post-bottom pull-left"> Aristóteles </p> </div>
+			</blockquote>
+		</div>
+	</section>
+
+	<section class="slideshow">
+		<div class="slideshow-text">
+			Lanches feitos com amor e dedicação, sempre prezando pela melhor qualidade e sabor.
+		</div>
+
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+				<img src="images/slides/burger-slide1.jpg" alt="burger1">
+				<div class="text">Lanche exemplo 1</div>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/slides/burger-slide2.jpg" alt="burger2">
+				<div class="text">Lanche exemplo 2</div>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/slides/burger-slide3.jpg" alt="burger3">
+				<div class="text">Lanche exemplo 3</div>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/slides/burger-slide4.jpg" alt="burger4">
+				<div class="text">Lanche exemplo 4</div>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/slides/burger-slide5.jpg" alt="burger5">
+				<div class="text">Lanche exemplo 5</div>
+			</div>
+		</div>
+		<br>
+		<div class="ps-dots" style="text-align:center">
+			<span class="dot"></span> 
+			<span class="dot"></span> 
+			<span class="dot"></span>
+			<span class="dot"></span>   
+			<span class="dot"></span>   
+		</div>
+	</section>
+
+
+	<div class="iframe">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.697924073977!2d-54.56436758533158!3d-25.548437243837228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f6910636f9249f%3A0x1a3d29326bfbaf32!2sAv.+Felipe+Wandscheer%2C+2310+-+Vila+Yolanda%2C+Foz+do+Igua%C3%A7u+-+PR%2C+85870-637!5e0!3m2!1spt-BR!2sbr!4v1558461268162!5m2!1spt-BR!2sbr" allowfullscreen></iframe>
+	</div>
+	<section class="cardbox">
+		<div class="card">
+			<img src="images/card/burger-card1.jpg" alt="Card1">
+			<div class="container">
+				<h4><b>Et harum quidem rerum facilis est et expedita distinctio.</b></h4> 
+				<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam...</p>
+				<a href="#" class="card-link">&gt; Leia mais</a> 
+			</div>
+		</div>
+		<div class="card">
+			<img src="images/card/burger-card2.jpg" alt="Card2">
+			<div class="container">
+				<h4><b>Et harum quidem rerum facilis est et expedita distinctio.</b></h4> 
+				<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam...</p>
+				<a href="#" class="card-link"> &gt; Leia mais</a> 
+			</div>
+		</div>
+		<div class="card">
+			<img src="images/card/burger-card3.jpeg" alt="Card3">
+			<div class="container">
+				<h4><b>Et harum quidem rerum facilis est et expedita distinctio.</b></h4> 
+				<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam...</p>
+				<a href="#" class="card-link"> &gt; Leia mais</a> 
+			</div>
+		</div>
+		<div class="card">
+			<img src="images/card/burger-card4.jpeg" alt="Card4">
+			<div class="container">
+				<h4><b>Et harum quidem rerum facilis est et expedita distinctio.</b></h4> 
+				<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam...</p>
+				<a href="#" class="card-link"> &gt; Leia mais</a> 
+			</div>
+		</div>
+	</section>
+
+	<section class="sponsors">
+		<div class="sponsors-text"> Parceiros: </div>
+		<div class="sponsors-images">
+            <div class="div-logo"><img class="logo-sponsors" src="images/logos/sadia-logo-1.png" alt="logo-sadia"></div>
+            <div class="div-logo"><img class="logo-sponsors" src="images/logos/logo-turano.png" alt="logo-turano"></div>
+			<div class="div-logo"><img class="logo-sponsors" src="images/logos/friboi-logo.png" alt="logo-friboi"></div>
+            <div class="div-logo"><img class="logo-sponsors" src="images/logos/coca-cola-logo-1.png" alt="logo-cocacola"></div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="logo-footer">
+			<img src="images/logos/burguer-logo2.png" alt="Logo">
+		</div> 
+		<div class="contact-hours-wrapper">
+			<div class="contact-icon">
+				<i class="fas fa-map-marker-alt"></i>
+			</div>
+			<div class="address-wrapper">
+				Av. Felipe Wandscheer, 350<br>
+				Foz do Iguaçu, PR, 85853-000
+			</div>
+		</div>
+		<div class="links-wrapper">
+			<div class="nav-link">
+				<a href="#">Home</a>
+			</div>
+			<div class="nav-link">
+				<a href="#">Sobre</a>
+			</div>
+			<div class="nav-link dropdown">
+				<a class="nav-link">Menu</a>
+				<div class="dropdown-content">
+					<a href="#">Lanches</a>
+					<a href="#">Bebidas</a>
+					<a href="#">Adicionais</a>
+				</div>
+			</div>
+			<div class="nav-link">
+				<a href="#">Contato</a>
+			</div>
+			<div class="nav-link dropdown">
+				<a class="nav-link">Opções</a>
+				<div class="dropdown-content">
+					<a href="#">Entrega</a>
+					<a href="#">Promoções</a>
+					<a href="#">Feedback</a>
+				</div>
+			</div>
+		</div>
+		<div class="social-media-icons-wrapper">
+			<a href="https://www.instagram.com/?hl=pt-br"> <i class="fab fa-instagram"></i> </a>
+			<a href="https://twitter.com/"> <i class="fab fa-twitter"></i> </a>
+			<a href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i> </a>
+			<a href="https://www.youtube.com/"> <i class="fab fa-youtube"></i> </a>
+		</div>
+		<div class="copyright-wrapper">
+			&copy; 2018 Burger &#124; Todos os direitos reservados.
+		</div>
+	</footer>
+
+	<script> currentSlide(1); </script>
+	 
+</body>
+</html>
